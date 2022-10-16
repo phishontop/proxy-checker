@@ -1,2 +1,2 @@
-# proxy-checker
-python proxy checker coded with sockets checks HTTP proxies
+# Proxy Checker
+simple python program which uses [httpzoom lib](https://github.com/phishontop/sockets-wrapper)
