@@ -2,7 +2,7 @@ import core
 import threading
 import time
 
-THREADS = 1000
+THREADS = 500
 TIMEOUT = 5
 
 
@@ -24,14 +24,7 @@ def checkProxy(proxy):
         print(f"[ERROR] {proxy}")
 
 proxies = loadProxies()
-threads = []
 for proxy in proxies:
-    threads.append(threading.Thread(target=checkProxy, args=(proxy,)))
-
-for thread in threads:
+    threading.Thread(target=checkProxy, args=(proxy,)).start()
     time.sleep(TIMEOUT/THREADS)
-    thread.start()
-
-for thread in threads:
-    thread.join()
-
+    
